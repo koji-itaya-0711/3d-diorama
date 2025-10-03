@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  vue-app:
+    build: .
+    ports:
+      - "8080:8080"  # Vite のデフォルトポート
+    # volumes:
+      # - .:/app
+      # - /app/node_modules  # ホストの node_modules を無視
+    environment:
+      - HOST=0.0.0.0
+    command: npm run serve
